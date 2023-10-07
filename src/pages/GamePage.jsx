@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-function Game() {
+function GamePage() {
   
 
   /**
@@ -28,4 +28,4 @@ function Game() {
   )
 }
 
-export default Game;
+export default GamePage;
