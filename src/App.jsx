@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import Store from './pages/Store'
 import Library from './pages/Library'
 import NotFoundPage from './pages/NotFoundPage'
-import Game from './pages/Game'
+import Game from './pages/GamePage'
+import Downloads from './pages/Downloads'
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Store />} />
         <Route path='/library' element={<Library />} />
-        <Route path='/game' element={<Game />}/>          {/** change to dynamic route */}
+        <Route path='/game/:game_id' element={<Game />}/>
+        <Route path='/downloads' element={<Downloads />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>
