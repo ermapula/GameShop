@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 
 function Store() {
   return (
-    <Stack direction="row">
+    <Stack direction="row" bgcolor={"background.default"}>
       <Sidebar />
       <StoreGames />
     </Stack>
