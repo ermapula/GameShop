@@ -1,7 +1,7 @@
 import { Notifications } from "@mui/icons-material";
 import { AppBar, Avatar, Badge, Box, Stack, Toolbar, Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
-// import { Ava tarIcon } from '../../static/';
+// import { AvatarIcon } from '../../static/';
 
 function Navbar() {
   return (
@@ -12,7 +12,7 @@ function Navbar() {
         gap: '20px',
       }}>
         <Box>
-
+          
         </Box>
         <Stack direction='row' gap={20}>
           <Typography sx={{fontSize: '16px'}}>
