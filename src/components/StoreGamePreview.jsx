@@ -3,19 +3,6 @@ import { Link } from "react-router-dom";
 import Tag from "./Tag";
 
 function StoreGamePreview({...game}) {
-  
-  /**
-   * Game Preview
-   * 
-   * Title
-   * Poster
-   * Price
-   * 
-   * actions:
-   *  add to wishlist
-   *  buy
-   *  link to game page
-   */
 
   return (
     <Box sx={{
@@ -49,7 +36,7 @@ function StoreGamePreview({...game}) {
             }
           </Stack>
           <Typography variant="h5" fontWeight={700} color="rgb(169, 221, 255)">
-            {game.price ? `${game.price} ₸` : "Free"}
+            {game.price ? `$${game.price}` : "Free"}
           </Typography>
         </Stack>
       </Stack>

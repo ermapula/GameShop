@@ -1,7 +1,17 @@
-import { Notifications } from "@mui/icons-material";
-import { AppBar, Avatar, Badge, Box, Stack, Toolbar, Typography } from "@mui/material";
+import { Notifications, Gamepad } from "@mui/icons-material";
+import { AppBar, Avatar, Badge, Box, Stack, Toolbar, Typography, styled } from "@mui/material";
 import { Link } from 'react-router-dom';
 // import { AvatarIcon } from '../../static/';
+
+const MLink = styled(Link)({
+  height: "100%",
+  color: "white",
+  textDecoration: "none",
+  padding: "20px",
+  "&:hover": {
+    backgroundColor: "rgba(0, 0, 0, 0.1)"
+  }
+})
 
 function Navbar() {
   return (
@@ -11,19 +21,28 @@ function Navbar() {
         justifyContent: "space-around",
         gap: '20px',
       }}>
-        <Box>
-          
-        </Box>
-        <Stack direction='row' gap={20}>
-          <Typography sx={{fontSize: '16px'}}>
-            <Link to="/" >Store</Link>
+        <Stack direction='row' alignItems='center'>
+          <Gamepad height='50px' width='50px' />
+          <Typography variant="h6" noWrap>
+            Game Shop
           </Typography>
-          <Typography sx={{fontSize: '16px'}}>
-            <Link to="/library" >Library</Link>
-          </Typography>
-          <Typography sx={{fontSize: '16px'}}>
-            <Link to="/downloads">Downloads</Link>
-          </Typography>
+        </Stack>
+        <Stack direction='row' gap={10}>
+          <MLink to='/'>
+            <Typography>
+              Store
+            </Typography>
+          </MLink>
+          <MLink to='/library'>
+            <Typography>
+              Library
+            </Typography>
+          </MLink>
+          {/* <MLink to='/downloads'>
+            <Typography>
+              Downloads
+            </Typography>
+          </MLink> */}
         </Stack>
 
         <Stack direction='row' gap={5} alignItems='center'>

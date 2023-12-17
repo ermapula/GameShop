@@ -1,10 +1,13 @@
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 
-function Sidebar() {
+function Sidebar({ genres, handleSearch, handleGenreChange }) {
   return (
     <Box flex={1}>
       <Box position='fixed'>
-        Sidebar
+        <TextField 
+        label="Search..."
+        onChange={(e) => handleSearch(e.target.value)}
+        />
       </Box>
     </Box>
   )
