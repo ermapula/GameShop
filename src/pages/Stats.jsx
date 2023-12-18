@@ -1,15 +1,40 @@
 import { useEffect, useState } from 'react';
-import { Table, TableHead, TableRow, TableCell, TableBody, TableSortLabel, Box } from '@mui/material';
+import { Table, TableHead, TableRow, TableCell, TableBody, TableSortLabel, Box, Typography } from '@mui/material';
 import data from '../data/Games.js';
 
 export default function Stats() {
   const [orderBy, setOrderBy] = useState('id');
   const [order, setOrder] = useState('asc');
+  const [most, setMost] = useState({});
 
   useEffect(() => {
     data.map((game, i) => {
       data[i]['total'] = game.price * game.buys
     })
+
+    const byPrice = data.reduce((max, curGame) => {
+      return curGame.price > max.price ? curGame : max;
+    }, data[0]);
+    setMost(prev => ({
+      ...prev,
+      price: byPrice
+    }))
+
+    const byBuys = data.reduce((max, curGame) => {
+      return curGame.buys > max.buys ? curGame : max;
+    }, data[0]);
+    setMost(prev => ({
+      ...prev,
+      buys: byBuys
+    }))
+
+    const byWishlist = data.reduce((max, curGame) => {
+      return curGame.wishlists > max.wishlists ? curGame : max;
+    }, data[0]);
+    setMost(prev => ({
+      ...prev,
+      wishlist: byWishlist
+    }))
   }, [])
 
   const handleSort = (property) => {
@@ -30,6 +55,66 @@ export default function Stats() {
   });
   return (
     <Box bgcolor={"background.default"} minHeight="100%"> 
+    {
+      most.price && (
+      <Box sx={{
+        paddingBottom: "30px",
+        paddingTop: "30px"
+      }}>
+        <Typography variant='h4'>
+          The most expensive game
+        </Typography>
+        <Table>
+          <TableRow>
+            <TableCell width="150px"><Box component="img" src={most.price.header} width="150px" /></TableCell>
+            <TableCell width="400px">{most.price.title}</TableCell>
+            <TableCell>${most.price.price}</TableCell>
+          </TableRow>
+        </Table>
+      </Box>
+      )
+    }
+
+    { 
+      most.buys && (
+      <Box sx={{
+        paddingBottom: "30px",
+        paddingTop: "30px"
+      }}>
+        <Typography variant='h4'>
+          The most bought game
+        </Typography>
+        <Table>
+          <TableRow>
+            <TableCell width="150px"><Box component="img" src={most.buys.header} width="150px" /></TableCell>
+            <TableCell width="400px">{most.buys.title}</TableCell>
+            <TableCell>{most.buys.buys}</TableCell>
+          </TableRow>
+        </Table>
+      </Box>
+      )
+    }
+
+    { 
+      most.buys && (
+      <Box sx={{
+        paddingBottom: "30px",
+        paddingTop: "30px"
+      }}>
+        <Typography variant='h4'>
+          The most wishlisted game
+        </Typography>
+        <Table>
+          <TableRow>
+            <TableCell width="150px"><Box component="img" src={most.wishlist.header} width="150px" /></TableCell>
+            <TableCell width="400px">{most.wishlist.title}</TableCell>
+            <TableCell>{most.wishlist.wishlists}</TableCell>
+          </TableRow>
+        </Table>
+      </Box>
+      )
+    }
+      
       <Table>
         <TableHead>
           <TableRow>
@@ -60,7 +145,7 @@ export default function Stats() {
                 direction={orderBy === 'price' ? order : 'asc'}
                 onClick={() => handleSort('price')}
               >
-                Price
+                Price, $
               </TableSortLabel>
             </TableCell>
             <TableCell>
@@ -87,7 +172,7 @@ export default function Stats() {
                 direction={orderBy === 'total' ? order : 'asc'}
                 onClick={() => handleSort('total')}
               >
-                Total from buys
+                Total from buys, $
               </TableSortLabel>
             </TableCell>
           </TableRow>
@@ -101,7 +186,7 @@ export default function Stats() {
               <TableCell>{row.price ? `$${row.price}` : "Free"}</TableCell>
               <TableCell>{row.wishlists}</TableCell>
               <TableCell>{row.buys}</TableCell>
-              <TableCell>${row.total.toFixed(2)}</TableCell>
+              <TableCell>${row.total?.toFixed(2)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

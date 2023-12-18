@@ -1,8 +1,20 @@
-# React + Vite
+# Business feature: Statistics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+At the top it shows highlights:
+* The most expensive game - a game with the highest price
+* The most bought game - a game with the highest number of buys
+* The most wishlisted game - a game with the highest number of wishlists
 
-Currently, two official plugins are available:
+After that it shows all games in the table form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can sort the table by clicking on the column label. (In ascending and descending order)
+You can observe and compare data.
+
+Table columns from left to right:
+* Game poster - image
+* ID - game id
+* Name - game title
+* Price - game price
+* Wishlists - number of users who wishlisted the game
+* Buys - number of users who bought the game
+* Total from buys - how much money the game made only by selling it
