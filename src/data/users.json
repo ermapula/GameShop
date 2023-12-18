@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "test",
+      "password": "test",
+      "wishlist": [2],
+      "library": [1]
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "password",
+      "wishlist": [],
+      "library": []
+    }
+  ]
+}
