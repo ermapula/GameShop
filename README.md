@@ -10,6 +10,7 @@ At the top it shows highlights:
 After that it shows all games in the table form.
 
 You can sort the table by clicking on the column label. (In ascending and descending order)
+
 You can observe and compare data.
 
 Table columns from left to right:
