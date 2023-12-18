@@ -16,5 +16,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': [
+      'warn',
+      { skipUndeclared: true }
+    ],
+    'no-unused-vars': [
+      'warn',
+      { skipUndeclared: true }
+    ],
   },
 }
