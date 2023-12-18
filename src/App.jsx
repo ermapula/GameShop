@@ -8,10 +8,23 @@ import Downloads from './pages/Downloads'
 import GamePage from './pages/GamePage'
 import { Box, ThemeProvider, createTheme } from '@mui/material'
 import Login from './pages/Login'
-
+import {users} from './data/users.json';
 
 function App() {
   const [user, setUser] = useState(null);
+  const userId = localStorage.getItem('user');
+
+  useEffect(() => {
+    if(user){
+      return;
+    }
+    if(userId){
+      const filteredUser = users.find(user => user.id == userId);
+      if(filteredUser){
+        setUser(filteredUser)
+      }
+    }
+  }, [userId, user])
 
   const darkTheme = createTheme({
     palette: {
@@ -24,8 +37,8 @@ function App() {
       <Box bgcolor={"Background.default"} color={"text.primary"} height="100%">
         <Navbar user={user} setUser={setUser} />
         <Routes>
-          <Route path='/' element={<Store />} />
-          <Route path='/library' element={<Library />} />
+          <Route path='/' element={<Store user={user} />} />
+          <Route path='/library' element={<Library user={user} />} />
           <Route path='/game/:game_id' element={<GamePage />}/>
           <Route path='/downloads' element={<Downloads />} />
           <Route path='/login' element={<Login setUser={setUser} />} />

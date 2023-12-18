@@ -1,6 +1,6 @@
-import { Autocomplete, Box, Checkbox, FormControlLabel, FormGroup, Stack, TextField } from "@mui/material";
+import { Autocomplete, Box, Button, Checkbox, FormControlLabel, FormGroup, Stack, TextField } from "@mui/material";
 
-function Sidebar({ genres, handleSearch, handleGenreChange }) {
+function Sidebar({ user, genres, handleSearch, handleGenreChange, handleWishList }) {
   return (
       <Stack flex={1} gap={1} marginTop={1} > 
         <TextField 
@@ -27,6 +27,15 @@ function Sidebar({ genres, handleSearch, handleGenreChange }) {
           )}
           />
         </FormGroup>
+        {
+          user && (
+            <Button
+              onClick={handleWishList}
+            >
+              Show wishlist
+            </Button>
+          )
+        }
       </Stack>
   )
 }

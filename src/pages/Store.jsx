@@ -4,11 +4,11 @@ import Sidebar from "../components/Sidebar";
 import { useEffect, useState } from "react";
 import games from '../data/Games.js';
 
-function Store() {
+function Store({user}) {
   const [genres, setGenres] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGenres, setSelectedGenres] = useState([]);
-  
+  const [filteredGames, setFilteredGame] = useState([]);
 
   useEffect(() => {
     const tags = new Set();
@@ -18,6 +18,21 @@ function Store() {
     setGenres([...tags])
   }, [])
 
+  useEffect(() => {
+    const data = games.filter((game) => {
+      const matchesSearchTerm =
+        game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        game.description.toLowerCase().includes(searchTerm.toLowerCase());
+  
+      const matchesGenres =
+        selectedGenres.length === 0 ||
+        game.tags.some((tag) => selectedGenres.includes(tag));
+  
+      return matchesSearchTerm && matchesGenres;
+    })
+    setFilteredGame(data)
+  }, [searchTerm, selectedGenres])
+
   function handleSearch(input) {
     setSearchTerm(input);
   }
@@ -26,17 +41,12 @@ function Store() {
     setSelectedGenres(genres);
   }
 
-  const filteredGames = games.filter((game) => {
-    const matchesSearchTerm =
-      game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      game.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-    const matchesGenres =
-      selectedGenres.length === 0 ||
-      game.tags.some((tag) => selectedGenres.includes(tag));
-
-    return matchesSearchTerm && matchesGenres;
-  })
+  function handleWishList(){
+    if(user && user.wishlist){
+      const data = games.filter(game => user.wishlist.includes(game.id))
+      setFilteredGame(data);
+    }
+  }
 
   return (
     <Stack minHeight="100%" direction="row" bgcolor={"background.default"} >
@@ -44,6 +54,8 @@ function Store() {
         genres={genres}
         handleSearch={handleSearch}
         handleGenreChange={handleGenreChange}
+        handleWishList={handleWishList}
+        user={user}
         />
       <StoreGames games={filteredGames} />
     </Stack>
