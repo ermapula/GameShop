@@ -9,6 +9,7 @@ import GamePage from './pages/GamePage'
 import { Box, ThemeProvider, createTheme } from '@mui/material'
 import Login from './pages/Login'
 import {users} from './data/users.json';
+import Stats from './pages/Stats'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -42,6 +43,7 @@ function App() {
           <Route path='/game/:game_id' element={<GamePage user={user}/>}/>
           <Route path='/downloads' element={<Downloads />} />
           <Route path='/login' element={<Login setUser={setUser} />} />
+          <Route path='/stats' element={<Stats />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </Box>

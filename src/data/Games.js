@@ -8,6 +8,8 @@ export default [
     developer: "Valve",
     publisher: "Valve",
     price: 0,
+    buys: 100,
+    wishlists: 200
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ export default [
     developer: 'CD Projekt',
     publisher: 'CD Projekt',
     price: 29.99,
+    buys: 78,
+    wishlists: 140
   },
   {
     id: 3,
@@ -28,6 +32,8 @@ export default [
     developer: 'Epic Games',
     publisher: 'Epic Games',
     price: 0,
+    buys: 120,
+    wishlists: 200
   },
   {
     id: 4,
@@ -38,6 +44,8 @@ export default [
     developer: 'CD Projekt',
     publisher: 'CD Projekt',
     price: 49.99,
+    buys: 50,
+    wishlists: 150
   },
   {
     id: 5,
@@ -48,6 +56,8 @@ export default [
     developer: 'Innersloth',
     publisher: 'Innersloth',
     price: 4.99,
+    buys: 300,
+    wishlists: 500
   },
   {
     id: 6,
@@ -58,6 +68,8 @@ export default [
     developer: 'Mojang',
     publisher: 'Microsoft',
     price: 26.95,
+    buys: 600,
+    wishlists: 1000
   },
   {
     id: 7,
@@ -68,6 +80,8 @@ export default [
     developer: 'Ubisoft Montreal',
     publisher: 'Ubisoft',
     price: 59.99,
+    buys: 30,
+    wishlists: 95
   },
   {
     id: 8,
@@ -78,6 +92,8 @@ export default [
     developer: 'Blizzard Entertainment',
     publisher: 'Blizzard Entertainment',
     price: 39.99,
+    buys: 41,
+    wishlists: 93
   },
   {
     id: 9,
@@ -88,6 +104,8 @@ export default [
     developer: 'Rockstar Games',
     publisher: 'Rockstar Games',
     price: 59.99,
+    buys: 112,
+    wishlists: 153
   },
   {
     id: 10,
@@ -98,5 +116,7 @@ export default [
     developer: 'Riot Games',
     publisher: 'Riot Games',
     price: 0,
+    buys: 210,
+    wishlists: 201
   },
 ]

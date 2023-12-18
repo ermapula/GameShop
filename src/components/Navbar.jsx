@@ -68,11 +68,11 @@ function Navbar({user, setUser}) {
               Library
             </Typography>
           </MLink>
-          {/* <MLink to='/downloads'>
+          <MLink to='/stats'>
             <Typography>
-              Downloads
+              Statistics
             </Typography>
-          </MLink> */}
+          </MLink>
         </Stack>
 
         <Stack direction='row' gap={3} alignItems='center'>
