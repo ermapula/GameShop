@@ -1,5 +1,5 @@
 import { Notifications, Gamepad } from "@mui/icons-material";
-import { AppBar, Avatar, Badge, Box, Menu, MenuItem, Stack, Toolbar, Typography, styled } from "@mui/material";
+import { AppBar, Avatar, Badge, Menu, MenuItem, Stack, Toolbar, Typography, styled } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
@@ -102,6 +102,11 @@ function Navbar({user, setUser}) {
               'aria-labelledby': 'avatar-icon',
             }}
           >
+            <MenuItem>
+              {
+                user && <Typography>$ {user.balance}</Typography>
+              }
+            </MenuItem>
             <MenuItem onClick={handleClose} sx={{padding: "0"}}>
               {
                 user ? (

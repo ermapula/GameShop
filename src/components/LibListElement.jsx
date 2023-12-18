@@ -20,4 +20,4 @@ export default function LibListElement({game, selectGame}) {
       </Typography>
     </ListItem>
   )
-};
+}

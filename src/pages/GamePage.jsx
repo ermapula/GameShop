@@ -5,7 +5,7 @@ import games from '../data/Games';
 import Tag from "../components/Tag";
 import GamePageActions from "../components/GamePageActions";
 
-function GamePage() {
+function GamePage({user}) {
   const { game_id } = useParams();
   const [ game, setGame ] = useState({});
 
@@ -83,7 +83,7 @@ function GamePage() {
           </Stack>
         </Box>
       </Stack>
-      <GamePageActions />
+      <GamePageActions gameId={game.id} user={user} />
       </>
     )
     : 

@@ -1,4 +1,4 @@
-import { Autocomplete, Box, Button, Checkbox, FormControlLabel, FormGroup, Stack, TextField } from "@mui/material";
+import { Autocomplete, Button, Checkbox, FormControlLabel, FormGroup, Stack, TextField } from "@mui/material";
 
 function Sidebar({ user, genres, handleSearch, handleGenreChange, handleWishList }) {
   return (

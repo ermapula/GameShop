@@ -20,9 +20,5 @@ module.exports = {
       'warn',
       { skipUndeclared: true }
     ],
-    'no-unused-vars': [
-      'warn',
-      { skipUndeclared: true }
-    ],
   },
 }

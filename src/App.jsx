@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Store user={user} />} />
           <Route path='/library' element={<Library user={user} />} />
-          <Route path='/game/:game_id' element={<GamePage />}/>
+          <Route path='/game/:game_id' element={<GamePage user={user}/>}/>
           <Route path='/downloads' element={<Downloads />} />
           <Route path='/login' element={<Login setUser={setUser} />} />
           <Route path='*' element={<NotFoundPage />} />

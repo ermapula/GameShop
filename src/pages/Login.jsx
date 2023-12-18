@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, Input, InputAdornment, InputLabel, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { users } from '../data/users.json'
 
@@ -27,7 +27,9 @@ function Login({setUser}) {
       u.username === formData.username && u.password === formData.password
     ))
     if(user){
+      localStorage.setItem('user', user.id);
       setUser(user);
+
       const redirect = location.state?.from || '/'; 
       navigate(redirect);
     } else {
