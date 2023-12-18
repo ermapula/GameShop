@@ -19,7 +19,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={"Background.default"} color={"text.primary"}>
+      <Box bgcolor={"Background.default"} color={"text.primary"} height="100%">
         <Navbar />
         <Routes>
           <Route path='/' element={<Store />} />

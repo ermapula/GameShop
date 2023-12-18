@@ -10,40 +10,11 @@ function GamePage() {
   const [ game, setGame ] = useState({});
 
   useEffect(() => {
-    // console.log(game_id)
     const [thisgame] = games.filter(game => game.id == game_id)
     if(thisgame){
-      // game exists => show game page
       setGame(thisgame)
     }
-    else{
-      console.log(`Game id:${game_id} doesn't exist`)
-      // game doesn't exist => show 404 or do smth else
-    }
-  }, [game_id]);
-  /**
-   * Layout
-   * Game title
-   * screens / trailer
-   * description
-   * tags
-   * rating
-   * 
-   * price
-   * add to wishlist
-   * 
-   * specs
-   * 
-   * reviews
-   * 
-   */
-  if(!game) {
-    return (
-      <Typography>
-        Does not exits
-      </Typography>
-    )
-  }
+  }, []);
 
   return (
     <Stack 
@@ -52,7 +23,11 @@ function GamePage() {
       paddingLeft={20}
       paddingRight={20}
       direction="column"
+      height="100%"
     >
+    {
+      Object.keys(game).length !== 0 ?
+    ( <>
       <Typography 
         variant="h2"
         fontWeight={700}
@@ -109,9 +84,16 @@ function GamePage() {
         </Box>
       </Stack>
       <GamePageActions />
-    </Stack>
+      </>
+    )
+    : 
+    <Typography variant="h3">
+      This game doesn&apos;t exits
+    </Typography>
+  }
+  
+  </Stack>
   )
-
 }
 
 export default GamePage;

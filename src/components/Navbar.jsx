@@ -21,12 +21,14 @@ function Navbar() {
         justifyContent: "space-around",
         gap: '20px',
       }}>
-        <Stack direction='row' alignItems='center'>
-          <Gamepad height='50px' width='50px' />
-          <Typography variant="h6" noWrap>
-            Game Shop
-          </Typography>
-        </Stack>
+        <MLink to='/'>
+          <Stack direction='row' alignItems='center'>
+            <Gamepad height='50px' width='50px' />
+            <Typography variant="h6" noWrap>
+              Game Shop
+            </Typography>
+          </Stack>
+        </MLink>
         <Stack direction='row' gap={10}>
           <MLink to='/'>
             <Typography>

@@ -6,9 +6,8 @@ export default function Tag({tag}) {
       bgcolor: "rgb(56, 180, 96)",
       p: "0 6px",
       borderRadius: "4px",
-      cursor: "pointer",
       width: "fit-content",
-      
+      height: "100%"
     }}>
       {tag}
     </Typography>
