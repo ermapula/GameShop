@@ -20,7 +20,7 @@ function Library({user}) {
     <Stack 
       direction="row"
       bgcolor={"background.default"}
-      height="100%"
+      minHeight="100%"
       gap={5}
     >
       {
