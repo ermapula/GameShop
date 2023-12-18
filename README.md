@@ -1,5 +1,7 @@
 # Business feature: Statistics
 
+url: http://localhost:5173/stats or navigate through navbar
+
 At the top it shows highlights:
 * The most expensive game - a game with the highest price
 * The most bought game - a game with the highest number of buys
