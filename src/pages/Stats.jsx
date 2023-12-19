@@ -65,11 +65,13 @@ export default function Stats() {
           The most expensive game
         </Typography>
         <Table>
-          <TableRow>
-            <TableCell width="150px"><Box component="img" src={most.price.header} width="150px" /></TableCell>
-            <TableCell width="400px">{most.price.title}</TableCell>
-            <TableCell>${most.price.price}</TableCell>
-          </TableRow>
+          <TableHead>
+            <TableRow>
+              <TableCell width="150px"><Box component="img" src={most.price.header} width="150px" /></TableCell>
+              <TableCell width="400px">{most.price.title}</TableCell>
+              <TableCell>${most.price.price}</TableCell>
+            </TableRow>
+          </TableHead>
         </Table>
       </Box>
       )
@@ -85,11 +87,13 @@ export default function Stats() {
           The most bought game
         </Typography>
         <Table>
-          <TableRow>
-            <TableCell width="150px"><Box component="img" src={most.buys.header} width="150px" /></TableCell>
-            <TableCell width="400px">{most.buys.title}</TableCell>
-            <TableCell>{most.buys.buys}</TableCell>
-          </TableRow>
+          <TableHead>
+            <TableRow>
+              <TableCell width="150px"><Box component="img" src={most.buys.header} width="150px" /></TableCell>
+              <TableCell width="400px">{most.buys.title}</TableCell>
+              <TableCell>{most.buys.buys}</TableCell>
+            </TableRow>
+          </TableHead>
         </Table>
       </Box>
       )
@@ -105,11 +109,13 @@ export default function Stats() {
           The most wishlisted game
         </Typography>
         <Table>
-          <TableRow>
-            <TableCell width="150px"><Box component="img" src={most.wishlist.header} width="150px" /></TableCell>
-            <TableCell width="400px">{most.wishlist.title}</TableCell>
-            <TableCell>{most.wishlist.wishlists}</TableCell>
-          </TableRow>
+          <TableHead>
+            <TableRow>
+              <TableCell width="150px"><Box component="img" src={most.wishlist.header} width="150px" /></TableCell>
+              <TableCell width="400px">{most.wishlist.title}</TableCell>
+              <TableCell>{most.wishlist.wishlists}</TableCell>
+            </TableRow>
+          </TableHead>
         </Table>
       </Box>
       )
